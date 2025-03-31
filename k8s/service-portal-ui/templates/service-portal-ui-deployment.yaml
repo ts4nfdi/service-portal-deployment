@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-ui
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-ui
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-ui
+    spec:
+      containers:
+      - name: {{ .Release.Name }}-ui
+        image: {{ .Values.images.ui }}
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 3000
+        env:
+          - name: GATEWAY_BASE_URL
+            value: {{ .Values.ui.GATEWAY_BASE_URL }}
+          - name: SMTP_HOST_NAME
+            value: {{ .Values.ui.SMTP_HOST_NAME }}
+          - name: SERVICE_EMAIL
+            value: {{ .Values.ui.SERVICE_EMAIL }}
+          - name: SMTP_PORT
+            value: {{ .Values.ui.SMTP_PORT }}
+          - name: CONTACT_RECV_EMAIL
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-contact-recv-email
+                key: CONTACT_RECV_EMAIL
+          - name: SMTP_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-smtp-api-key
+                key: SMTP_API_KEY
+          - name: SMTP_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-smtp-username
+                key: SMTP_USERNAME
+          - name: SMTP_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-smtp-password
+                key: SMTP_PASSWORD
+          - name: CAPTCHA_VALIDATION_URL
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-captcha-validation-url
+                key: CAPTCHA_VALIDATION_URL
+          - name: CAPTCHA_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-captcha-api-key
+                key: CAPTCHA_API_KEY
+          - name: AUTH_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-auth-secret
+                key: AUTH_SECRET
