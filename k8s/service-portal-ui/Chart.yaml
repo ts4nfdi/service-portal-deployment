@@ -1,5 +1,5 @@
 apiVersion: v2
-name: Service Portal
+name: service-portal-ui
 description: A Helm chart to deploy the Service Portal.
 type: application
 version: 0.0.1
