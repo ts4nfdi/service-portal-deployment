@@ -19,13 +19,25 @@ spec:
           - containerPort: 3000
         env:
           - name: GATEWAY_BASE_URL
-            value: {{ .Values.ui.GATEWAY_BASE_URL }}
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-gateway-base-url
+                key: GATEWAY_BASE_URL
           - name: SMTP_HOST_NAME
-            value: {{ .Values.ui.SMTP_HOST_NAME }}
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-smtp-host-name
+                key: SMTP_HOST_NAME
           - name: SERVICE_EMAIL
-            value: {{ .Values.ui.SERVICE_EMAIL }}
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-smtp-service-email
+                key: SERVICE_EMAIL
           - name: SMTP_PORT
-            value: {{ .Values.ui.SMTP_PORT }}
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-smtp-port
+                key: SMTP_PORT
           - name: CONTACT_RECV_EMAIL
             valueFrom:
               secretKeyRef:

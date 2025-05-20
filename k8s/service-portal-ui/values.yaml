@@ -5,8 +5,3 @@ ingress:
   path:
 images:
   ui:
-ui:
-  GATEWAY_BASE_URL:
-  SMTP_HOST_NAME:
-  SMTP_PORT:
-  SERVICE_EMAIL:
