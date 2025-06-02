@@ -3,6 +3,16 @@ entries:
   service-portal-ui:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-06-02T06:51:14.707163057Z"
+    description: A Helm chart to deploy the Service Portal.
+    digest: eda912c2b21db5075afe6c419fc02f8cf63f516aeca628bce28e8073751cefaf
+    name: service-portal-ui
+    type: application
+    urls:
+    - https://github.com/ts4nfdi/service-portal-deployment/releases/download/service-portal-ui-0.0.5/service-portal-ui-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-06-02T06:43:42.727806885Z"
     description: A Helm chart to deploy the Service Portal.
     digest: 45b14172c010ba7ae16c1c324abf3e1876588a440e935cfebf872870790c832d
@@ -41,4 +51,4 @@ entries:
     urls:
     - https://github.com/ts4nfdi/service-portal-deployment/releases/download/service-portal-ui-0.0.1/service-portal-ui-0.0.1.tgz
     version: 0.0.1
-generated: "2025-06-02T06:43:42.727828887Z"
+generated: "2025-06-02T06:51:14.707181673Z"
