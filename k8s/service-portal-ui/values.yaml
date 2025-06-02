@@ -1,5 +1,6 @@
 ingress:
   dns:
+  redirectDns:
   enableSSL:
   certIssuer:
   path:
