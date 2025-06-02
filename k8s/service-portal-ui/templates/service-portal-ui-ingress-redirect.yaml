@@ -19,3 +19,4 @@ spec:
                 name: {{ .Release.Name }}-ui
                 port:
                   number: 3000
+{{- end }}
