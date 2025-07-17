@@ -1,4 +1,4 @@
-{{- if .Values.ingress.dns }}
+{{- if .Values.ingress.redirectDns }}
   {{- $relname := .Release.Name -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
