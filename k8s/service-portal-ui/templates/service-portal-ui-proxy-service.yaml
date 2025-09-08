@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-tss-proxy
+  annotations:
+    nginx.ingress.kubernetes.io/upstream-vhost: ts4nfdi.github.io
+spec:
+  type: ExternalName
+  externalName: ts4nfdi.github.io
+  ports:
+    - port: 443
+      targetPort: 443
