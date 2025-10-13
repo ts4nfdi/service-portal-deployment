@@ -28,7 +28,7 @@ spec:
     - host: {{ .Values.ingress.dns }}
       http:
         paths:
-        - path: /tss/?(.*)
+        - path: /tss/(.*)
           pathType: ImplementationSpecific
           backend:
             service:
