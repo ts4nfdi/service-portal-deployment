@@ -73,3 +73,9 @@ spec:
               secretKeyRef:
                 name: ts4nfdi-service-portal-auth-secret
                 key: AUTH_SECRET
+      resources:
+        requests:
+          cpu: 250m
+          memory: 256Mi
+        limits:
+          memory: 512Gi
