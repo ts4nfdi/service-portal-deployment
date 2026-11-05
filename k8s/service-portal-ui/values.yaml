@@ -6,3 +6,4 @@ ingress:
   path:
 images:
   ui:
+statisticsServiceBaseUrl: http://ts4nfdi-api-gateway-collection-statistics:8000

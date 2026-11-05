@@ -73,6 +73,28 @@ spec:
               secretKeyRef:
                 name: ts4nfdi-service-portal-auth-secret
                 key: AUTH_SECRET
+          - name: STATISTICS_SERVICE_PORTAL_KEY
+            valueFrom:
+              secretKeyRef:
+                name: statistics-service-portal-key
+                key: STATISTICS_SERVICE_PORTAL_KEY
+          - name: NEXTAUTH_URL
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-nextauth-url
+                key: NEXTAUTH_URL
+          - name: NEXT_IAM_REDIRECT_URL
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-iam-redirect-url
+                key: NEXT_IAM_REDIRECT_URL
+          - name: MATOMO_TRACKER_ID
+            valueFrom:
+              secretKeyRef:
+                name: ts4nfdi-service-portal-matomo-tracker-id
+                key: MATOMO_TRACKER_ID
+          - name: STATISTICS_SERVICE_BASE_URL
+            value: {{ .Values.statisticsServiceBaseUrl | quote }}
       resources:
         requests:
           cpu: 250m
